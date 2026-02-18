@@ -198,7 +198,6 @@ A **persistence bonus** adds +1.0 if ≥3 events occurred in the last 2 seconds,
 **Fixed mounting required.** The device must remain completely stationary after arming. Any accidental bump corrupts the baseline and may trigger false alarms until the baseline unfreezes and relearns after 15 seconds of quiet.
 
 
-```
 ## 6. Future Work
 
 The most significant planned improvement is **remote monitoring and control via smartphone**. Currently, all interaction with the system happens through a serial USB connection, which requires physical proximity to a computer. The goal is to replace this with a mobile interface accessible from anywhere.
