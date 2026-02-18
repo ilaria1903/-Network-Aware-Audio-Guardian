@@ -185,7 +185,7 @@ A **persistence bonus** adds +1.0 if ≥3 events occurred in the last 2 seconds,
 
 **COOLDOWN**: LED off. 10-second pause. All scores reset, baseline unfrozen, returns to IDLE.
 
----
+```
 
 ## 5. Known Limitations
 
@@ -196,3 +196,21 @@ A **persistence bonus** adds +1.0 if ≥3 events occurred in the last 2 seconds,
 **Whisper detection unreliability.** Whispers have low amplitude and their spectral signature overlaps with certain ambient noises (HVAC, distant traffic). The FFT classification can miss whispers in moderately noisy environments, or occasionally misclassify ambient noise as a whisper. This remains an open calibration problem.
 
 **Fixed mounting required.** The device must remain completely stationary after arming. Any accidental bump corrupts the baseline and may trigger false alarms until the baseline unfreezes and relearns after 15 seconds of quiet.
+
+
+```
+## 6. Future Work
+
+The most significant planned improvement is **remote monitoring and control via smartphone**. Currently, all interaction with the system happens through a serial USB connection, which requires physical proximity to a computer. The goal is to replace this with a mobile interface accessible from anywhere.
+
+Concretely, this would involve:
+
+**Wi-Fi connectivity.** The ESP32 already has built-in Wi-Fi, so no additional hardware is needed. The plan is to run a lightweight web server or MQTT client directly on the ESP32, connecting it to the local network.
+
+**Mobile interface.** A simple web app (or a platform like Blynk / Home Assistant) would allow the user to arm and disarm the system from their phone, using the same password authentication currently implemented over serial. The masked password input and EEPROM persistence would carry over directly.
+
+**Push notifications.** When the system transitions to ALARM state, it would send a push notification to the user's phone with the detection type (radar movement, voice, whisper, knock) and the score at the time of trigger — giving context, not just a raw alert.
+
+**Remote disarm.** After receiving the alert, the user would be able to disarm the system directly from the phone notification or app, entering their password remotely. This mirrors the current `disarm` serial command but over Wi-Fi.
+
+This addition would transform the system from a standalone local device into a practical home security tool usable without being physically present at a computer.
