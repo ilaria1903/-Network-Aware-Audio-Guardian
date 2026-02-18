@@ -18,7 +18,6 @@ At startup the system is **DISARMED**. The user arms it via a serial menu, at wh
 | Servo Motor | Standard 5V servo, 0–180° rotation | 1 |
 | Ultrasonic Sensor Mount | Bracket attached to servo horn (makes the radar assembly) | 1 |
 | LED | 5mm (status indicator) | 1 |
-| Transistor | NPN (e.g. 2N2222 or similar) | 1 |
 | Capacitor | 100 µF electrolytic (power decoupling) | 1 |
 | Breadboard | Full or half size | 1 |
 | Jumper Wires | Male-to-male, male-to-female | ~20 |
