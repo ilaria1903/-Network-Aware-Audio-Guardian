@@ -27,7 +27,7 @@ At startup the system is **DISARMED**. The user arms it via a serial menu, at wh
 
 ## 2. Tutorial Source
 
-This project is **not based on a specific tutorial**. The radar scanning concept (servo + ultrasonic) is a well-known hobbyist pattern, but the detection logic, scoring engine, FSM architecture, audio FFT analysis, baseline management, and arm/disarm system with EEPROM password are all original designs developed specifically for this project.
+This project is **not based on a specific tutorial**. Thw the detection logic, scoring engine, FSM architecture, audio FFT analysis, baseline management, and arm/disarm system with EEPROM password are all original designs developed specifically for this project.
 
 ---
 
