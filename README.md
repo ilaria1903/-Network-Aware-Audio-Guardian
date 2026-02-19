@@ -2,7 +2,7 @@
 
 ## General Description
 
-This project implements an embedded security system capable of detecting intrusions in an enclosed space using two complementary sensing modalities: a rotating ultrasonic radar and a sound sensor with FFT spectral analysis. The system runs on an ESP32 and features a 5-state finite state machine (FSM), a fuzzy scoring engine, and an arm/disarm system protected by a password stored in EEPROM.
+This project implements an embedded security system capable of detecting intrusions in an enclosed space using two complementary sensing modalities: a rotating ultrasonic radar and a sound sensor with FFT spectral analysis. The system runs on an ESP32 and features a 5-state finite state machine (FSM), a scoring engine, and an arm/disarm system protected by a password stored in EEPROM.
 
 At startup the system is **DISARMED**. The user arms it via a serial menu, at which point the system performs an audio baseline calibration and three full radar sweeps to learn the environment. From that point on, any deviation from the learned spatial baseline or any detected voice/knock/whisper triggers a scoring mechanism that progressively escalates through suspect → verify → alarm states.
 
@@ -44,7 +44,7 @@ All intelligence lives **on the ESP32** — there is no cloud, no external serve
 - **Spatial memory**: a learned baseline of distances per angle slot (51 slots across 150°), updated with an exponential moving average when the environment is stable
 - **Anomaly detection**: a z-score calculation per angle that compares current distance readings against the baseline's recent history
 - **Audio classification**: a 128-point FFT over the microphone signal, with band energy ratios used to distinguish voice (300–3400 Hz), whisper (1000–4000 Hz), knock, and background noise
-- **Scoring engine**: a weighted fuzzy score combining radar and audio confidence, with saturation, decay, and persistence bonuses
+- **Scoring engine**: a weighted  score combining radar and audio confidence, with saturation, decay, and persistence bonuses
 - **FSM**: five-state machine (IDLE → SUSPECT → VERIFY → ALARM → COOLDOWN) with threshold-based transitions
 - **EEPROM password management**: arm/disarm authentication stored across reboots
 
