@@ -186,11 +186,13 @@ A **persistence bonus** adds +1.0 if ≥3 events occurred in the last 2 seconds,
 - `audioScore > 8.0` AND persistent local sound AND `signalStrength > 0.7` AND `totalScore ≥ 10.0`
 
 **ALARM**: LED solid on. Reminder printed every 10 seconds. User must type `disarm` + correct password to exit. Auto-resets to COOLDOWN after 60 seconds.
-![Alarm](Images/Alarm.png)
+
 
 **COOLDOWN**: LED off. 10-second pause. All scores reset, baseline unfrozen, returns to IDLE.
 
 ```
+
+![Alarm](Images/Alarm.png)
 
 ## 5. Known Limitations
 
