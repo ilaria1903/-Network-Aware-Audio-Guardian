@@ -97,7 +97,11 @@ At arm time, the servo sweeps from 15° to 165° in 3° steps (51 angle slots) f
 baseline[i] = (baseline[i] × cycle + new_reading) / (cycle + 1)
 ```
 
+![Disarmed](Images/Dezarmat.png)
+![Arming](Images/Calibrare.png)
+
 After these 3 sweeps, the system has a learned spatial map of the room — every angle slot knows how far the nearest surface is.
+![Cycles](Images/Calibrare.png)
 
 ### Radar Anomaly Detection (Z-Score)
 
@@ -182,6 +186,7 @@ A **persistence bonus** adds +1.0 if ≥3 events occurred in the last 2 seconds,
 - `audioScore > 8.0` AND persistent local sound AND `signalStrength > 0.7` AND `totalScore ≥ 10.0`
 
 **ALARM**: LED solid on. Reminder printed every 10 seconds. User must type `disarm` + correct password to exit. Auto-resets to COOLDOWN after 60 seconds.
+![Alarm](Images/Alarm.png)
 
 **COOLDOWN**: LED off. 10-second pause. All scores reset, baseline unfrozen, returns to IDLE.
 
